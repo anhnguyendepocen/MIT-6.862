@@ -1,0 +1,53 @@
+\begin{thebibliography}{1}
+
+\bibitem{de2018clinically}
+Jeffrey De~Fauw, Joseph~R Ledsam, Bernardino Romera-Paredes, Stanislav Nikolov,
+  Nenad Tomasev, Sam Blackwell, Harry Askham, Xavier Glorot, Brendan
+  O’Donoghue, Daniel Visentin, et~al.
+\newblock Clinically applicable deep learning for diagnosis and referral in
+  retinal disease.
+\newblock {\em Nature medicine}, 24(9):1342, 2018.
+
+\bibitem{Dua:2019}
+Dheeru Dua and Casey Graff.
+\newblock {UCI} machine learning repository, 2017.
+
+\bibitem{goldenberg2019new}
+S~Larry Goldenberg, Guy Nir, and Septimiu~E Salcudean.
+\newblock A new era: artificial intelligence and machine learning in prostate
+  cancer.
+\newblock {\em Nature Reviews Urology}, page~1, 2019.
+
+\bibitem{lee2017curated}
+Rebecca~Sawyer Lee, Francisco Gimenez, Assaf Hoogi, Kanae~Kawai Miyake, Mia
+  Gorovoy, and Daniel~L Rubin.
+\newblock A curated mammography data set for use in computer-aided detection
+  and diagnosis research.
+\newblock {\em Scientific data}, 4:170177, 2017.
+
+\bibitem{litjens20181399}
+Geert Litjens, Peter Bandi, Babak Ehteshami~Bejnordi, Oscar Geessink, Maschenka
+  Balkenhol, Peter Bult, Altuna Halilovic, Meyke Hermsen, Rob van~de Loo, Rob
+  Vogels, et~al.
+\newblock 1399 h\&e-stained sentinel lymph node sections of breast cancer
+  patients: the camelyon dataset.
+\newblock {\em GigaScience}, 7(6):giy065, 2018.
+
+\bibitem{mangasarian1993mathematical}
+Olvi~L Mangasarian.
+\newblock Mathematical programming in neural networks.
+\newblock {\em ORSA Journal on Computing}, 5(4):349--360, 1993.
+
+\bibitem{street1993nuclear}
+W~Nick Street, William~H Wolberg, and Olvi~L Mangasarian.
+\newblock Nuclear feature extraction for breast tumor diagnosis.
+\newblock In {\em Biomedical image processing and biomedical visualization},
+  volume 1905, pages 861--870. International Society for Optics and Photonics,
+  1993.
+
+\bibitem{wang2016deep}
+Dayong Wang, Aditya Khosla, Rishab Gargeya, Humayun Irshad, and Andrew~H Beck.
+\newblock Deep learning for identifying metastatic breast cancer.
+\newblock {\em arXiv preprint arXiv:1606.05718}, 2016.
+
+\end{thebibliography}

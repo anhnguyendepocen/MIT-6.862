@@ -1,0 +1,50 @@
+% Template file for TeXShop by Michael Sharpe, LPPL
+\documentclass[11pt]{article} 
+\usepackage[margin=1in]{geometry} 
+\usepackage[parfill]{parskip}% Begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm}
+\usepackage{natbib}
+
+\title{MIT 6.862 Applied Machine Learning Project Proposal}
+\author{Matthew West, Fall 2019}
+\begin{document}
+\date{}
+\maketitle
+
+\subsection*{Question}
+This is a supervised learning project where the questions of interest relate to medical diagnostics, investigating how supervised learning can be used in classification and particularly in determining the presence of breast cancer from a dataset derived from mammogram images. The first part of the project will involve looking at both traditional machine learning (Naive Bayes, SVM, etc) and more contemporary deep neural networks for classification, and to determine which approach performs best using a naive metric such as accuracy, thus providing some basic insight into which approach might be favourable for the nature and size of dataset available. Given the relatively small size of the dataset, it is anticipated that deep networks won't confer a significant benefit in classification, though it is possible that more data will become available, ideally including the original images from which the chosen dataset is derived. 
+
+Following this, it will be of interest to extend the use of accuracy, bringing in alternative metrics related to precision and recall, and performing a comparison between the different algorithms as before, but with a set of new potential metrics. This will also involve an exploration of which types of metric are preferable for medical diagnostics, where we often care much more about minimizing false, giving comparatively little weight to false positives.
+
+\subsection*{Data}
+The dataset for the first part of this project at least will be the Wisconsin Breast Cancer Dataset \cite{Dua:2019}. This was collected by a group at the University of Wisconsin in the early 1990's, and is a structured dataset with 10 features computed from a set of digitized images of breast tissue. There are 569 instances, with 357 labelled as malignant (M), and 212 as benign (B). This dataset thus presents a binary classification problem, making it amenable to many metrics of success that incorporate precision and recall.
+
+Beyond this, there are a number of other candidate datasets that could be incorporated into the project, but each presents a challenge in comparing to the Wisconsin dataset. Most of them are raw images only and typically labelled in terms of regions of interest, thus presenting both an image segmentation and classification problem simultaneously. While it would be fruitful to compare Convolutional Neural Networks to traditional machine learning classifiers on data of this variety, there is another layer of complexity inherent in extracting appropriate features to optimize classifier performance, such that they would provide a fair comparison to CNN's. 
+
+Among these potential datasets are DDSM, the Digital Database for Screening Mammography, and its curated sub-dataset with expert mammographer ground truth validation, Curated Breast Imaging Subset (CBIS-DDSM). \cite{lee2017curated} These present an image segmentation problem, so there would be a considerable amount of additional work in processing the data before it can be used purely for investigation of classification. Another promising candidate dataset is the CAMELYON dataset, which was made public for a grand challenge in pathology posed by the Department of Pathology at Radboud University Medical Center. \cite{litjens20181399}
+
+\subsection*{Motivation and Previous Work}
+Machine and deep learning methods have already received significant attention within medical imaging diagnostics, a well publicised example of which was DeepMind's use of deep learning in diagnosing retinal disease. \cite{de2018clinically} More specifically, similar methods have been used in breast and prostate cancer imaging diagnostics. \cite{wang2016deep, goldenberg2019new} 
+
+The motivation for this kind of work is clear, as medical diagnostics is becoming increasingly automated and incorporating the use of statistical and machine learning methods. There are a number of practical and ethical issues in using machine learning in a clinical setting, even when being utilized in tandem with a trained clinician, so it is important to give proper treatment to classification problems specific to the medical domain. Another desirable feature of models used in this way is interpretability, which some sophisticated models struggle with, so it may be the case that for a diagnostic tool it becomes worth trading performance in some metric for an increased degree of interpretability.
+
+\subsubsection*{Computational Resources}
+I will be running and evaluating the models for this project primarily on my local machine, and perhaps using external cloud GPU services (AWS, etc) if the models become sufficiently complex. My computer has an Intel i7 with 32GB of RAM and an Nvidia GTX 1650 GPU, with 4GB of GDDR5 memory, and I anticipate that this will be sufficient for training most of the models within a reasonable time frame, given the size of the dataset. I will use the programming language Python 3 and a selection of machine learning libraries and frameworks such as scikit-learn and TensorFlow.
+
+\subsection*{Project Plan}
+\begin{itemize}
+\item \textbf{Exploratory Data Analysis:}
+Get to know the dataset and demonstrate that classification is even a reasonable thing to attempt given the problem statement. Set up data pipeline to make classification possible. Identify useful features and reduce to the most useful ones if necessary. (By 10/14)
+\item \textbf{Comparison of traditional ML on selected feature set:}
+Compare different algorithms using cross-validation to determine accuracy on validation data. (By 10/24)
+\item \textbf{Beyond Accuracy: Precision and Recall}
+Explore alternative metrics of success and determine which metric captures the desired behaviour of a tool used in medical diagnostics. Re-evaluate previous algorithms using selected metrics. (By 11/10)
+\item \textbf{Beyond Wisconsin (time allowing): } Incorporating alternative datasets with raw images allowing for comparison between CNN's and traditional ML on structured data. (By 11/30)
+\end{itemize}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{MIT}
+
+\end{document}
