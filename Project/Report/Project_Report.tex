@@ -189,12 +189,12 @@
 	\end{figure}
 	
 	\subsubsection{Transfer Learning}
-	Having successfully fit the raw image data to a CNN and predictably reaching a roadblock in terms of performance on validation data, it was decided to explore transfer learning on the set of images. This involves using a large pre-trained neural network to serve as the basis for either weight initialization, or a frozen forward pass that is ignored at training time but can serve as a feature set for a new set of layers which ar trained on top of it. 
+	Having successfully fit the raw image data to a CNN and predictably reaching a roadblock in terms of performance on validation data, it was decided to explore transfer learning on the set of images. This involves using a large pre-trained neural network to serve as the basis for either weight initialization, or a frozen forward pass that is ignored at training time but can serve as a feature set for a new set of layers which are trained on top of it. 
 	
 	As before, Keras was used to train all models. A number of deep architectures were imported from Keras, all trained on ImageNet data and with the final dense classification layers removed. VGG16 and VGG19 were the two architectures that were chosen to perform classification, and their results are summarized in Table \ref{CNN-table}. On top of these networks, a \texttt{Conv2D()} layer was added with filter size 3x3 and depth 32, followed by a 2x2 \texttt{MaxPooling2D()} layer. A dense layer was added with ReLU activation, with 256 and 512 units for VGG16 and VGG19, respectively. The output of this layer was output to a single unit with sigmoid activation, as previously. The VGG16-based architecture performed best across all metrics, including recall and $F_1$.
 	
 		\begin{table}[t]
-		\caption{Cross-validated classification metrics for convolutional neural networks, both and using transfer learning. All values for metrics are scaled to be percentages. In each case, binary cross-entropy loss was used with stochastic gradient descent used for optimization with the default Keras hyperparameters.}
+		\caption{Cross-validated classification metrics for convolutional neural networks, both trained from scratch and using transfer learning. All values for metrics are scaled to be percentages. In each case, binary cross-entropy loss was used with stochastic gradient descent for optimization, with the default Keras hyperparameters.}
 		\label{CNN-table}
 		\vskip 0.15in
 		\begin{center}
@@ -226,7 +226,7 @@
 	The introduction of benchmark datasets for medical imaging problems would encourage research in this field and would likely provide significantly more relevant feature sets for researchers and clinicians with access to modestly-sized datasets hoping to apply transfer learning to their problems. Until then, this gap remains to be filled with researchers in other domains relying on architectures optimized for ImageNet.	
 	
 	\section{Conclusion}
-	An investigation of traditional machine learning on an established structured dataset has been presented alongside a more experimental investigation of CNN's for image classification. Classification was successful on the structured dataset, meeting the target benchmark set in the original paper from which it was derived, and extending this to more domain-specific metrics. Transfer learning has been successfully applied to classification on raw images, and a number of potential improvements for further improving transfer learning-based approaches in medical imaging have been identified.
+	An investigation of traditional machine learning on an established structured dataset has been presented alongside a more experimental investigation of CNN's for image classification. Classification was successful on the structured dataset, meeting the target benchmark set in the original paper from which it was derived, and extending this to more domain-specific metrics. Transfer learning has been successfully applied to classification on raw images, and a number of suggestions for further improving transfer learning-based approaches in medical imaging have been identified.
 	
 	
 	
